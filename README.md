@@ -1,2 +1,1 @@
-# uy-ci-validator
-Validador de Cédula de Identidad Uruguaya
+# Validador de Cédula de Identidad Uruguaya
