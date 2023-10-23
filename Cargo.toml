@@ -1,5 +1,5 @@
 [package]
-name = "uy-ci-validator"
+name = "uy_ci_validator"
 version = "0.1.0"
 edition = "2021"
 
@@ -7,3 +7,11 @@ edition = "2021"
 
 [dependencies]
 clap = { version = "4.0", features = ["derive"] }
+
+[lib]
+name = "uy_ci_validator"
+path = "src/main.rs"
+
+[[bin]]
+name = "uy_ci_validator"
+path = "src/cli.rs"
