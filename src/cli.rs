@@ -9,7 +9,6 @@ struct CliArgs {
     option: char,
 }
 
-#[cfg_attr(coverage_nightly, coverage(off))]
 fn main() {
   let CliArgs { ci, option } = CliArgs::parse();
   if option == 'v' {
