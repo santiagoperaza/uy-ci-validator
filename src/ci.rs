@@ -1,6 +1,8 @@
 
 use std::fmt;
 
+const CI_MULTIPLIERS: [u32; 7] = [8, 1, 2, 3, 4, 7, 6];
+
 #[derive(Debug)]
 pub enum CIError {
     /// Represents an error while validating a CI
@@ -50,10 +52,9 @@ fn calculate_last_digit(ci: u32) -> u32 {
     let digits: Vec<_> = ci.to_string().chars().map(|d| d.to_digit(10).unwrap()).collect();
     let digits = &digits[..7];
 
-    let validators = vec![8, 1, 2, 3, 4, 7, 6];
     let mut sum = 0;
     for (index, ele) in digits.iter().enumerate() {
-        sum += validators[index] * ele
+        sum += CI_MULTIPLIERS[index] * ele
     }
     sum % 10
 }
